@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"math/rand"
 	"time"
-	// "time"
 )
 
 func main() {
