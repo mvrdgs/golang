@@ -24,12 +24,3 @@ func main() {
 	imprimirSlice([]string(lista))
 	imprimirLista(ListaDeCompras(slice))
 }
-
-type ListaGenerica []interface{}
-
-func (lista *ListaGenerica) RemoverIndice(indice int) interface{} {
-	l := *lista
-	removido := l[indice]
-	*lista = append(l[0:indice], l[indice+1:]...)
-	return removido
-}
