@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type ListaGenerica []interface{}
 
 func (lista *ListaGenerica) RemoverIndice(indice int) interface{} {
@@ -15,4 +17,17 @@ func (lista *ListaGenerica) RemoverInicio() interface{} {
 
 func (lista *ListaGenerica) RemoverFim() interface{} {
 	return lista.RemoverIndice(len(*lista) - 1)
+}
+
+func main() {
+	lista := ListaGenerica{
+		1, "Café", 42, true, 23, "Bola", 3.14, false,
+	}
+
+	fmt.Printf("Lista original: \n%v\n\n", lista)
+	fmt.Printf("Removendo início %v, após remoção: \n%v\n", lista.RemoverInicio(), lista)
+	fmt.Printf("Removendo fim %v, após remoção: \n%v\n", lista.RemoverFim(), lista)
+	fmt.Printf("Removendo índice 3: %v, após remoção: \n%v\n", lista.RemoverIndice(3), lista)
+	fmt.Printf("Removendo índice 0: %v, após remoção: \n%v\n", lista.RemoverIndice(0), lista)
+	fmt.Printf("Removendo o último índice: %v, após remoção: \n%v\n", lista.RemoverIndice(len(lista)-1), lista)
 }
