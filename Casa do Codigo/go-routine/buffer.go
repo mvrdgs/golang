@@ -14,13 +14,17 @@ func main() {
 	c := make(chan int, 3)
 	go produzir(c)
 
-	for {
-		valor, ok := <-c
+	// for {
+	// 	valor, ok := <-c
 
-		if ok {
-			fmt.Println(valor)
-		} else {
-			break
-		}
+	// 	if ok {
+	// 		fmt.Println(valor)
+	// 	} else {
+	// 		break
+	// 	}
+	// }
+
+	for valor := range c {
+		fmt.Println(valor)
 	}
 }
