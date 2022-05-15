@@ -2,7 +2,9 @@ package main
 
 import "fmt"
 
-func produzir(c chan int) {
+// c chan <- int controla o fluxo, só é possível receber valores
+// c <-chan int possibilita apenas ler valores
+func produzir(c chan<- int) {
 	c <- 1
 	c <- 2
 	c <- 3
